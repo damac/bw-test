@@ -1,0 +1,24 @@
+syntax = "proto3";
+package main;
+
+option go_package="../device_rest";
+
+message cumulative_count {
+  int32 cumulative_count = 1;
+}
+
+message latest_timestamp {
+  string latest_timestamp = 1;
+}
+
+message SomeMessage {
+
+  message Readings {
+    string timestamp= 1;
+    int32 count = 2;
+  }
+
+  string id = 1;
+  repeated Readings readings = 2;
+}
+
