@@ -10,13 +10,13 @@ go run server/rest_endpoint.go
 
 First send some readings in (or not, you're call). I have two example files in the examples folder. 
 ```azure
-    curl -v  -X POST --data @examples/example.json localhost:8080/v1/reading
+    curl --data @examples/example.json localhost:8080/v1/reading
 ```
 
 Then call by device ID for latest or the count. I recommend adding | jq . to make it pretty.
 ```azure
-    curl localhost:8080/v1/latest/36d5656a-6908-479e-887e-a949ec199272 
-    curl localhost:8080/v1/count/36d5656a-6908-479e-887e-a949ec199272 | jq .
+    curl localhost:8080/v1/latest/36d5658a-6908-479e-887e-a949ec199272 
+    curl localhost:8080/v1/count/36d5658a-6908-479e-887e-a949ec199272 | jq .
 ```
 
 ### Project Structure:
